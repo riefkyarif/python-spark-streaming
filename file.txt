@@ -1,0 +1,13 @@
+1. Apache Spark Streaming is a scalable fault-tolerant streaming processing system that natively supports both batch and streaming workloads. 
+2. Spark Streaming is an extension of the core Spark API that allows data engineers and data scientists to process real-time data from various sources including (but not limited to) Kafka, Flume, and Amazon Kinesis. 
+3. This processed data can be pushed out to file systems, databases, and live dashboards. 
+4. Its key abstraction is a Discretized Stream or, in short, a DStream, which represents a stream of data divided into small batches. 
+5. DStreams are built on RDDs, Spark’s core data abstraction. This allows Spark Streaming to seamlessly integrate with any other Spark components like MLlib and Spark SQL. 
+6. Spark Streaming is different from other systems that either have a processing engine designed only for streaming, or have similar batch and streaming APIs but compile internally to different engines. 
+7. Spark’s single execution engine and unified programming model for batch and streaming lead to some unique benefits over other traditional streaming systems.
+
+Major Aspects of Spark Streaming are -
+1. Fast recovery from failures and stragglers
+2. Better load balancing and resource usage
+3. Combining of streaming data with static datasets and interactive queries
+4. Native integration with advanced processing libraries (SQL, machine learning, graph processing)
