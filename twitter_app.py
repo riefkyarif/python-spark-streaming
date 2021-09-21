@@ -49,6 +49,8 @@ from pyspark.streaming import StreamingContext
 from pyspark.sql import Row,SQLContext
 import sys
 import requests
+
+
 # create spark configuration
 conf = SparkConf()
 conf.setAppName("TwitterStreamApp")
@@ -113,7 +115,5 @@ def send_df_to_dashboard(df):
 	# initialize and send the data through REST API
 	url = 'http://localhost:5001/updateData'
 	request_data = {'label': str(top_tags), 'data': str(tags_count)}
-	response = requests.post(url, data=request_data)
-        	
-        	
+	response = requests.post(url, data=request_data)    	
         	
