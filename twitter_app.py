@@ -19,4 +19,16 @@ def get_tweets():
 	print(query_url, response)
 	return response
 	
-	
+def send_tweets_to_spark(http_resp, tcp_connection):
+	for line in http_resp.iter_lines():
+    	try:
+        	full_tweet = json.loads(line)
+        	tweet_text = full_tweet['text']
+        	print("Tweet Text: " + tweet_text)
+        	print ("------------------------------------------")
+        	tcp_connection.send(tweet_text + '\n')
+    	except:
+        	e = sys.exc_info()[0]
+        	print("Error: %s" % e)
+        	
+        	
