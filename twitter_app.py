@@ -31,4 +31,18 @@ def send_tweets_to_spark(http_resp, tcp_connection):
         	e = sys.exc_info()[0]
         	print("Error: %s" % e)
         	
+        	TCP_IP = "localhost"
+TCP_PORT = 9009
+conn = None
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((TCP_IP, TCP_PORT))
+s.listen(1)
+print("Waiting for TCP connection...")
+conn, addr = s.accept()
+print("Connected... Starting getting tweets.")
+resp = get_tweets()
+send_tweets_to_spark(resp, conn)
+
+
+        	
         	
